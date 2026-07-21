@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant CMP as Compras
+    participant AR as SAP Ariba
+    participant DS as Docusign CLM
+    participant FOR as Fornecedor
+    participant JUR as Jurídico
+    CMP->>AR: Cria requisição
+    AR->>DS: Envelope contrato (API)
+    DS->>FOR: Envia contrato p/ assinatura
+    FOR->>DS: Assina digitalmente (ICP-Brasil)
+    DS->>JUR: Notifica revisão
+    JUR->>DS: Contra-assinatura
+    DS->>AR: Retorna contrato assinado
+    AR->>CMP: Contrato ativo

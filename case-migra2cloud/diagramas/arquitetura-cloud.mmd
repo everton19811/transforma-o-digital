@@ -1,0 +1,20 @@
+graph LR
+    subgraph OnPrem
+        SAP[SAP]
+        ORA[(Oracle 11g Legado)]
+    end
+    subgraph GCP
+        PS[Pub/Sub]
+        DF[Dataflow]
+        BQ[(BigQuery)]
+        LK[Looker]
+        CR[Cloud Run]
+        CS[Cloud Storage]
+    end
+    SAP -->|CDC| PS
+    ORA -->|Batch| CS
+    PS --> DF
+    CS --> DF
+    DF --> BQ
+    BQ --> LK
+    CR --> BQ

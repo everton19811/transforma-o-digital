@@ -1,0 +1,9 @@
+graph LR
+    UI[Aplicações Consumidoras] --> GW[API Gateway Kong]
+    GW -->|Nova| MS[Microserviços Java]
+    GW -->|Legado| AS[AS400/Cobol]
+    MS --> PG[(PostgreSQL)]
+    MS --> KAFKA[Kafka]
+    KAFKA --> SAP[SAP Retail]
+    KAFKA --> PDV[PDV Linx]
+    KAFKA --> VTEX[VTEX]
