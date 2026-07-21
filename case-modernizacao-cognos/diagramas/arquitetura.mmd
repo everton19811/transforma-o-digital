@@ -1,0 +1,18 @@
+graph TB
+    subgraph Cliente
+        EXCEL[Excel Add-in]
+        WEB[Planning Analytics Workspace]
+    end
+    subgraph Servidor
+        TM1[TM1 Server v11]
+        PAW[PAW]
+    end
+    subgraph Dados
+        SQL[(SQL Server)]
+        AD[Active Directory]
+    end
+    EXCEL --> TM1
+    WEB --> PAW
+    PAW --> TM1
+    TM1 --> SQL
+    TM1 --> AD

@@ -1,0 +1,7 @@
+flowchart LR
+    BU[Unidades de Negócio] -->|Input| TM1[Cognos TM1]
+    SAP[SAP FI/CO] -->|Realizado| TM1
+    TM1 -->|Consolidação| CTRL[Controladoria]
+    CTRL -->|Aprovação| BPM[Workflow BPM]
+    BPM -->|Publicação| BI[Power BI]
+    BI --> STAKE[Diretoria]
